@@ -9,7 +9,9 @@ Welcome to anomdetect's documentation!
 .. toctree::
    :maxdepth: 4
 
-   source/modules.rst
+   source/anomaly.rst
+   source/adtk_bounds.rst
+   source/spc.rst
 
 Indices and tables
 ==================

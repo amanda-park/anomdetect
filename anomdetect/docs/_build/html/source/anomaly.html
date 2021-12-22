@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>anomdetect package &mdash; anomdetect  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>anomaly module &mdash; anomdetect  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -15,7 +15,9 @@
         <script src="../_static/language_data.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="anomdetect.adtk_bounds module" href="adtk_bounds.html" />
+    <link rel="prev" title="Welcome to anomdetect’s documentation!" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,8 +35,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="anomaly.html">anomaly module</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">anomaly module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="adtk_bounds.html">anomdetect.adtk_bounds module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="spc.html">spc module</a></li>
 </ul>
@@ -53,9 +55,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>anomdetect package</li>
+      <li>anomaly module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/source/anomdetect.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/source/anomaly.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -63,51 +65,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="anomdetect-package">
-<h1>anomdetect package<a class="headerlink" href="#anomdetect-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-anomdetect.adtk_bounds">
-<span id="anomdetect-adtk-bounds-module"></span><h2>anomdetect.adtk_bounds module<a class="headerlink" href="#module-anomdetect.adtk_bounds" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="anomdetect.adtk_bounds.ADTK_Bounds">
-<em class="property">class </em><code class="sig-prename descclassname">anomdetect.adtk_bounds.</code><code class="sig-name descname">ADTK_Bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adtk_obj</span></em>, <em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.adtk_bounds.ADTK_Bounds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This class creates the mathematical bounds that the ADTK package uses in order to determine if a point is an anomaly or not.</p>
-<dl class="py method">
-<dt id="anomdetect.adtk_bounds.ADTK_Bounds.ratio_bounds">
-<code class="sig-name descname">ratio_bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numerator</span></em>, <em class="sig-param"><span class="n">denominator</span></em>, <em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.adtk_bounds.ADTK_Bounds.ratio_bounds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the ratio bounds for ADTK algorithms.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>delta</strong> (<em>float</em>) – Required; default 1. Offset to bounds.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Pandas DataFrame with ratio bound violations.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anomdetect.adtk_bounds.ADTK_Bounds.univ_bounds">
-<code class="sig-name descname">univ_bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">0.0001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.adtk_bounds.ADTK_Bounds.univ_bounds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the univariate bounds for ADTK algorithms.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>delta</strong> (<em>float</em>) – Required; default .0001. Offset to bounds.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Pandas DataFrame with univariate bound violations.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-anomdetect.anomaly">
-<span id="anomdetect-anomaly-module"></span><h2>anomdetect.anomaly module<a class="headerlink" href="#module-anomdetect.anomaly" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-anomdetect.anomaly">
+<span id="anomaly-module"></span><h1>anomaly module<a class="headerlink" href="#module-anomdetect.anomaly" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="anomdetect.anomaly.Anomaly">
 <em class="property">class </em><code class="sig-prename descclassname">anomdetect.anomaly.</code><code class="sig-name descname">Anomaly</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">var_type</span><span class="o">=</span><span class="default_value">'univariate'</span></em>, <em class="sig-param"><span class="n">numerator</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">denominator</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.anomaly.Anomaly" title="Permalink to this definition">¶</a></dt>
@@ -269,100 +228,14 @@
 </dd></dl>
 
 </div>
-<div class="section" id="module-anomdetect.spc">
-<span id="anomdetect-spc-module"></span><h2>anomdetect.spc module<a class="headerlink" href="#module-anomdetect.spc" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="anomdetect.spc.SPC">
-<em class="property">class </em><code class="sig-prename descclassname">anomdetect.spc.</code><code class="sig-name descname">SPC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>“This class creates necessary functions for Statistical Process Control (SPC) charts.</p>
-<p>Currently, only p-charts are developed due to their ubiquity with Quality Control in healthcare.</p>
-<dl class="simple">
-<dt>The general workflow of the class is as follows:</dt><dd><ol class="arabic simple">
-<li><p>Fit data to a method (currently the option is p-chart) on a certain date range. This will represent the baseline data.</p></li>
-<li><p>Predict new anomalies based on the baseline fit. This can be done with predict().</p></li>
-</ol>
-</dd>
-</dl>
-<dl class="py method">
-<dt id="anomdetect.spc.SPC.bounds">
-<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.bounds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates bound for chosen control chart.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>predict</strong> (<em>bool</em>) – Default False. Set True if the predict() function has been used.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>DataFrame with the following columns:
-* Values
-* UCL
-* LCL
-* Violation</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anomdetect.spc.SPC.p_chart">
-<code class="sig-name descname">p_chart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numerator</span></em>, <em class="sig-param"><span class="n">denominator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.p_chart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs the calculations necessary to create a p-chart on baseline data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>numerator</strong> (<em>str</em>) – Required. The name of the numerator in the data frame fed into the class.</p></li>
-<li><p><strong>denominator</strong> (<em>str</em>) – Required. The name of the denominator in the data frame fed into the class.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>DataFrame column specifying binary yes/no violations.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anomdetect.spc.SPC.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts anomalies depending on the baseline fit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>df</strong> (<em>DataFrame</em>) – DataFrame to predict new violations on.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>DataFrame column specifying binary yes/no violations.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-anomdetect.utils_ad">
-<span id="anomdetect-utils-ad-module"></span><h2>anomdetect.utils_ad module<a class="headerlink" href="#module-anomdetect.utils_ad" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="anomdetect.utils_ad.logic_to_numeric">
-<code class="sig-prename descclassname">anomdetect.utils_ad.</code><code class="sig-name descname">logic_to_numeric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.utils_ad.logic_to_numeric" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="anomdetect.utils_ad.num_den_to_ratio">
-<code class="sig-prename descclassname">anomdetect.utils_ad.</code><code class="sig-name descname">num_den_to_ratio</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">numerator</span></em>, <em class="sig-param"><span class="n">denominator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.utils_ad.num_den_to_ratio" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="anomdetect.utils_ad.series_div">
-<code class="sig-prename descclassname">anomdetect.utils_ad.</code><code class="sig-name descname">series_div</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.utils_ad.series_div" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-anomdetect">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-anomdetect" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to anomdetect’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adtk_bounds.html" class="btn btn-neutral float-right" title="anomdetect.adtk_bounds module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

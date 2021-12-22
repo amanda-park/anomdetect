@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spc module &mdash; anomdetect  documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="anomdetect.adtk_bounds module" href="adtk_bounds.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> anomdetect
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="anomaly.html">anomaly module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adtk_bounds.html">anomdetect.adtk_bounds module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">spc module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">anomdetect</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>spc module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/spc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-anomdetect.spc">
+<span id="spc-module"></span><h1>spc module<a class="headerlink" href="#module-anomdetect.spc" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="anomdetect.spc.SPC">
+<em class="property">class </em><code class="sig-prename descclassname">anomdetect.spc.</code><code class="sig-name descname">SPC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>“This class creates necessary functions for Statistical Process Control (SPC) charts.</p>
+<p>Currently, only p-charts are developed due to their ubiquity with Quality Control in healthcare.</p>
+<dl class="simple">
+<dt>The general workflow of the class is as follows:</dt><dd><ol class="arabic simple">
+<li><p>Fit data to a method (currently the option is p-chart) on a certain date range. This will represent the baseline data.</p></li>
+<li><p>Predict new anomalies based on the baseline fit. This can be done with predict().</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="anomdetect.spc.SPC.bounds">
+<code class="sig-name descname">bounds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates bound for chosen control chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>predict</strong> (<em>bool</em>) – Default False. Set True if the predict() function has been used.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame with the following columns:
+* Values
+* UCL
+* LCL
+* Violation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomdetect.spc.SPC.p_chart">
+<code class="sig-name descname">p_chart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numerator</span></em>, <em class="sig-param"><span class="n">denominator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.p_chart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the calculations necessary to create a p-chart on baseline data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numerator</strong> (<em>str</em>) – Required. The name of the numerator in the data frame fed into the class.</p></li>
+<li><p><strong>denominator</strong> (<em>str</em>) – Required. The name of the denominator in the data frame fed into the class.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame column specifying binary yes/no violations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomdetect.spc.SPC.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomdetect.spc.SPC.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts anomalies depending on the baseline fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>DataFrame</em>) – DataFrame to predict new violations on.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DataFrame column specifying binary yes/no violations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="adtk_bounds.html" class="btn btn-neutral float-left" title="anomdetect.adtk_bounds module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Amanda Park &amp; Phil Sattler.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
