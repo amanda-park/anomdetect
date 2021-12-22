@@ -1,0 +1,13 @@
+README.md
+setup.py
+anomdetect/__init__.py
+anomdetect/adtk_bounds.py
+anomdetect/anomaly.py
+anomdetect/spc.py
+anomdetect/utils_ad.py
+anomdetect.egg-info/PKG-INFO
+anomdetect.egg-info/SOURCES.txt
+anomdetect.egg-info/dependency_links.txt
+anomdetect.egg-info/not-zip-safe
+anomdetect.egg-info/requires.txt
+anomdetect.egg-info/top_level.txt

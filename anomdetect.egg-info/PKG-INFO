@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: anomdetect
+Version: 0.1
+Summary: A library for calculating various anomaly detection and SPC charts.
+Home-page: https://github.com/amanda-park/anomdetect
+Author: Amanda Park & Phil Sattler
+Author-email: apark24@binghamton.edu
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
