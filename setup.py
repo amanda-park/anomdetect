@@ -1,13 +1,13 @@
 from setuptools import setup
 
-setup(name='Anomaly_Detection',
+setup(name='anomdetect',
       version='0.1',
       description='A library for calculating various anomaly detection and SPC charts.',
-      url='https://bitbucket.spectrum-health.org:7991/stash/projects/QSE/repos/adtk/',
-      author='Phil Sattler',
-      author_email='philip.sattler@spectrumhealth.org',
+      url='https://github.com/amanda-park/anomdetect',
+      author='Amanda Park & Phil Sattler',
+      author_email='apark24@binghamton.edu',
       license='MIT',
-      packages=['Anomaly_Detection'],
+      packages=['anomdetect'],
       install_requires=[
             'adtk',
             'pandas',
